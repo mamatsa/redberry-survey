@@ -1,12 +1,14 @@
-import rocketman from '../images/rocketman.png';
+import { Link } from 'react-router-dom';
 import '../styles/welcome.css';
 
 function Welcome() {
   return (
     <div className="welcome">
       <h1>Welcome Rocketeer !</h1>
-      <button className="btn">Start Questionnarie</button>
-      <a href="/">Submitted Applications</a>
+      <Link to="/survey/1" className="welcome-start">
+        <button className="btn">Start Questionnarie</button>
+      </Link>
+      <Link to="/applications">Submitted Applications</Link>
     </div>
   );
 }

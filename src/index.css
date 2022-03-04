@@ -4,6 +4,7 @@
   --redberry-red: #fe3b1f;
   --primary-stroke: #525557;
   --primary-red: #eb3535;
+  --primary-bg: radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
 }
 
 * {
@@ -18,13 +19,13 @@ body {
 
 h1 {
   font-family: 'Rowdies', cursive;
-  color: #fe3b1f;
+  color: var(--redberry-red);
   font-size: 96px;
   font-weight: normal;
 }
 
 .btn {
-  background-color: #fe3b1f;
+  background-color: var(--redberry-red);
   width: 395px;
   height: 79px;
   border: none;
@@ -33,4 +34,14 @@ h1 {
   font-family: Montserrat;
   color: white;
   cursor: pointer;
+}
+
+h2 {
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  color: var(--redberry-red);
+  margin-bottom: 130px;
 }
