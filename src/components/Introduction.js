@@ -1,3 +1,5 @@
+import Pagination from './Pagination';
+
 function Introduction() {
   return (
     <div className="container">
@@ -9,6 +11,7 @@ function Introduction() {
           <input type="email" placeholder="E Mail" />
           <input type="tel" placeholder="+995 5__ __ __ __" />
         </form>
+        <Pagination />
       </div>
       <div className="about-container">
         <h2>Redberry Origins</h2>

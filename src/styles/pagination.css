@@ -1,0 +1,55 @@
+.pagination {
+  display: flex;
+  margin: 70px 0;
+}
+
+.pagination > * {
+  margin-right: 20px;
+}
+.pagination-circle,
+.pagination-arrow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+}
+
+.pagination-circle {
+  background-color: #feebe9;
+}
+.pagination-circle.active {
+  background-color: var(--redberry-red);
+}
+
+.pagination-arrow {
+  border: 3px solid var(--redberry-red);
+  padding: 4px;
+}
+
+.pagination-arrow-up {
+  height: 3px;
+  width: 6px;
+  background-color: var(--redberry-red);
+  transform: rotate(45deg);
+}
+
+.pagination-arrow-down {
+  height: 3px;
+  width: 6px;
+  background-color: var(--redberry-red);
+  transform: rotate(-45deg);
+}
+
+.next .pagination-arrow-up {
+  transform: rotate(45deg);
+}
+
+.next .pagination-arrow-down {
+  transform: rotate(-45deg);
+}
+.prev .pagination-arrow-up {
+  transform: rotate(-45deg);
+}
+
+.prev .pagination-arrow-down {
+  transform: rotate(45deg);
+}
