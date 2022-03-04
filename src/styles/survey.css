@@ -4,16 +4,17 @@
 
 .survey-container,
 .about-container {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .survey-container {
   background-color: white;
   width: 49vw;
-  padding: 120px;
+  padding: 120px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .about-container {
@@ -40,7 +41,8 @@
   align-items: center;
 }
 
-.survey-container input {
+.survey-container input,
+.survey-container select {
   width: 455px;
   height: 54px;
   margin-bottom: 40px;
@@ -52,4 +54,62 @@
   font-weight: normal;
   font-size: 14px;
   color: #454545;
+}
+
+.survey-container select {
+  background-color: white;
+  appearance: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.select-items {
+  margin: 10px;
+}
+
+.select-skill {
+  position: relative;
+}
+
+.select-arrow {
+  width: 60px;
+  height: 55px;
+  transform: rotate(90deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  pointer-events: none;
+}
+
+.select-arrow-1,
+.select-arrow-2 {
+  width: 9px;
+  height: 2px;
+  margin: 2px;
+  background-color: red;
+}
+
+.select-arrow-1 {
+  transform: rotate(45deg);
+}
+
+.select-arrow-2 {
+  transform: rotate(-45deg);
+}
+
+.add-skill {
+  padding: 10px;
+  background-color: var(--redberry-red);
+  border: none;
+  color: white;
+  font-family: Montserrat;
+  cursor: pointer;
+  align-self: flex-end;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 60px;
 }

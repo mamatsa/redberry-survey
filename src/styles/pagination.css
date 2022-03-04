@@ -1,4 +1,5 @@
 .pagination {
+  justify-self: flex-end;
   display: flex;
   margin: 70px 0;
 }
@@ -29,14 +30,12 @@
   height: 3px;
   width: 6px;
   background-color: var(--redberry-red);
-  transform: rotate(45deg);
 }
 
 .pagination-arrow-down {
   height: 3px;
   width: 6px;
   background-color: var(--redberry-red);
-  transform: rotate(-45deg);
 }
 
 .next .pagination-arrow-up {

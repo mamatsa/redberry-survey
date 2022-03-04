@@ -1,0 +1,43 @@
+.skill-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid black;
+  width: 450px;
+  margin-bottom: 17px;
+}
+
+.skill-wrapper:nth-child(2) {
+  justify-self: center;
+}
+
+.skill-delete {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--redberry-red);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.skill-delete div {
+  width: 10px;
+  height: 2px;
+  background-color: var(--redberry-red);
+}
+
+.error-message {
+  color: var(--redberry-red);
+  align-self: flex-start;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  margin: 5px 55px;
+}

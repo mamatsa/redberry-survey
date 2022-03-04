@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Pagination() {
   const currentPage = parseInt(window.location.pathname.slice(-1));
-  console.log(currentPage);
   return (
     <div className="pagination">
-      <Link to={currentPage ? '/' : `/survey/${currentPage - 1}`}>
+      <Link to={currentPage === 1 ? '/' : `/survey/${currentPage - 1}`}>
         <div className="pagination-arrow prev">
           <div className="pagination-arrow-up"></div>
           <div className="pagination-arrow-down"></div>
