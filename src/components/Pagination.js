@@ -1,7 +1,7 @@
 import '../styles/pagination.css';
 import { Link } from 'react-router-dom';
 
-function Pagination() {
+function Pagination({ onSubmit }) {
   const currentPage = parseInt(window.location.pathname.slice(-1));
   return (
     <div className="pagination">
@@ -43,13 +43,12 @@ function Pagination() {
       )}
 
       <div className={`pagination-circle ${currentPage === 5 && 'active'}`}></div>
+      {/* to={`/survey/${currentPage + 1}`} */}
 
-      <Link to={`/survey/${currentPage + 1}`}>
-        <div className="pagination-arrow next">
-          <div className="pagination-arrow-up"></div>
-          <div className="pagination-arrow-down"></div>
-        </div>
-      </Link>
+      <div className="pagination-arrow next" onClick={onSubmit}>
+        <div className="pagination-arrow-up"></div>
+        <div className="pagination-arrow-down"></div>
+      </div>
     </div>
   );
 }

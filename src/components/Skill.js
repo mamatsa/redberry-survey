@@ -1,14 +1,14 @@
 import '../styles/skills.css';
 
-function Skill({ skillName, experience }) {
+function Skill({ id, title, experience, onSkillDelete }) {
   return (
     <div className="skill-wrapper">
-      <p>{skillName.padEnd(7, ' ')}</p>
+      <p>{title.padEnd(7, ' ')}</p>
       <p>Years of experience: {experience}</p>
       <div
         className="skill-delete"
         onClick={(e) => {
-          e.target.parentElement.remove();
+          onSkillDelete(id);
         }}
       >
         <div></div>

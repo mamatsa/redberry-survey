@@ -17,10 +17,21 @@
   justify-content: space-between;
 }
 
+.survey-container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.survey-container h2 {
+  margin-bottom: 115px;
+}
+
 .about-container {
   background-color: var(--primary-bg);
   width: 51vw;
-  padding: 120px 125px 0 160px;
+  padding: 120px 120px 0 150px;
 }
 
 .about-container p {
@@ -33,6 +44,7 @@
   align-items: center;
   letter-spacing: 0.05em;
   color: #ffffff;
+  margin: 0;
 }
 
 .survey-container form {
@@ -45,7 +57,7 @@
 .survey-container select {
   width: 455px;
   height: 54px;
-  margin-bottom: 40px;
+  margin-top: 40px;
   padding: 15px 55px;
   border: 1px solid #525557;
   box-sizing: border-box;
@@ -54,6 +66,10 @@
   font-weight: normal;
   font-size: 14px;
   color: #454545;
+}
+
+.survey-container input:nth-child(1) {
+  margin-top: 0;
 }
 
 .survey-container select {

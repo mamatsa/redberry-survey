@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/welcome.css';
 
 function Welcome() {
+  localStorage.setItem('progress', '');
   return (
     <div className="welcome">
       <h1>Welcome Rocketeer !</h1>
