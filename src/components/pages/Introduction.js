@@ -88,7 +88,7 @@ function Introduction() {
       <div className="survey-container">
         <div className="survey-container-main">
           <h2>Hey, Rocketeer, what are your coordinates?</h2>
-          <form action="">
+          <form action="" className="standart-form">
             <input
               type="text"
               placeholder="First Name"

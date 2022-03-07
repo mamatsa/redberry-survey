@@ -1,0 +1,58 @@
+.covid-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  align-self: start;
+}
+
+.covid-form > label {
+  align-self: flex-start;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+
+.covid-form input[type='radio'] {
+  margin-right: 7px;
+}
+
+.covid-form-radios {
+  display: flex;
+  flex-direction: column;
+  flex-direction: flex-start;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 0 20px 10px;
+}
+.covid-form input[type='date'] {
+  width: 455px;
+  height: 54px;
+  padding: 15px 55px;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  color: #454545;
+  margin-bottom: 50px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url('../images/calendar.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+}

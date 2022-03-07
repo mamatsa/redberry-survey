@@ -22,6 +22,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .survey-container h2 {
@@ -31,7 +32,7 @@
 .about-container {
   background-color: var(--primary-bg);
   width: 51vw;
-  padding: 120px 120px 0 150px;
+  padding: 120px 120px 0 120px;
 }
 
 .about-container p {
@@ -40,6 +41,7 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 200%;
+  width: 48ch;
   display: flex;
   align-items: center;
   letter-spacing: 0.05em;
@@ -53,7 +55,7 @@
   align-items: center;
 }
 
-.survey-container input,
+.standart-form > input,
 .survey-container select {
   width: 455px;
   height: 54px;

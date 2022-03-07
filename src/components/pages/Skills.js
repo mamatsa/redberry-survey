@@ -97,6 +97,7 @@ function Skills() {
     if (userSkills.length < 1) {
       setErrorMessage({ skill: 'you should choose at least 1 skill', experinece: '' });
     } else {
+      localStorage.setItem('progress', 2);
       navigate('/survey/3');
     }
   };
@@ -106,7 +107,7 @@ function Skills() {
       <div className="survey-container">
         <div className="survey-container-main">
           <h2>Tell us about your skills</h2>
-          <form onSubmit={(e) => onAdd(e)}>
+          <form className="standart-form" onSubmit={(e) => onAdd(e)}>
             <div className="select-skill">
               <select
                 name="skills"
