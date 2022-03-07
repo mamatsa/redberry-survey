@@ -30,6 +30,7 @@ function Covid() {
       ((covidContact === 'Yes' && covidDate) || covidContact === 'No') &&
       ((vaccinated === 'Yes' && vaccineDate) || vaccinated === 'No')
     ) {
+      localStorage.setItem('progress', 3);
       navigate('/survey/4');
     } else {
       setShowErrors(true);
@@ -43,7 +44,7 @@ function Covid() {
           <h2>Covid Stuff</h2>
           <form action="" className="covid-form">
             <label>How would you prefer to work?</label>
-            <div className="covid-form-radios">
+            <div className="form-radios">
               <div className="radio-wrapper">
                 <input
                   type="radio"
@@ -100,7 +101,7 @@ function Covid() {
             </div>
             <label>Did you contact covid 19? :(</label>
 
-            <div className="covid-form-radios">
+            <div className="form-radios">
               <div className="radio-wrapper">
                 <input
                   type="radio"
@@ -165,7 +166,7 @@ function Covid() {
 
             <label>Have you been vaccinated?</label>
 
-            <div className="covid-form-radios">
+            <div className="form-radios">
               <div className="radio-wrapper">
                 <input
                   type="radio"
