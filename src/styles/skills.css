@@ -28,17 +28,3 @@
   height: 2px;
   background-color: var(--redberry-red);
 }
-
-.error-message {
-  color: var(--redberry-red);
-  align-self: flex-start;
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 11px;
-  line-height: 13px;
-  display: flex;
-  align-items: center;
-  margin: 5px 55px;
-  margin-bottom: -18px;
-}

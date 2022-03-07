@@ -39,7 +39,7 @@ function Introduction() {
   };
 
   // On pagination next button press
-  const onSubmit = function () {
+  const onNext = function () {
     let errors = { firstName: '', lastName: '', email: '', phoneNumber: '' };
 
     // First Name validation
@@ -68,7 +68,7 @@ function Introduction() {
       errors.phoneNumber = 'number should start width +995';
     } else if (phoneNumber.length > 13) {
       errors.phoneNumber = 'phone number is too long';
-    } else if (phoneNumber.length < 13) {
+    } else if (phoneNumber && phoneNumber.length < 13) {
       errors.phoneNumber = 'phone number is too short';
     }
 
@@ -123,7 +123,7 @@ function Introduction() {
             {errorMessage.phoneNumber && <p className="error-message">* {errorMessage.phoneNumber}</p>}
           </form>
         </div>
-        <Pagination onSubmit={onSubmit} />
+        <Pagination onNext={onNext} />
       </div>
       <div className="about-container">
         <h2>Redberry Origins</h2>

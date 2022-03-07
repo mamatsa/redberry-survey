@@ -7,8 +7,7 @@ function Skills() {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState('');
   const [userSkills, setUserSkills] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [experienceError, setExperienceError] = useState('');
+  const [errorMessage, setErrorMessage] = useState({ skill: '', experinece: '' });
 
   const navigate = useNavigate();
 
@@ -41,31 +40,43 @@ function Skills() {
   const onAdd = function (e) {
     e.preventDefault();
 
+    let errors = { skill: '', experinece: '' };
+
     // if skill is not chosen
     const skill = document.getElementById('skills');
     if (skill.value === 'default') {
-      setErrorMessage('Please choose a skill');
-      return;
-    }
-
-    // if skill is already chosen
-    for (const skillObj of userSkills) {
-      if (skillObj.title === skill.value) {
-        setErrorMessage('this skill is already chosen');
-        return;
-      }
+      errors.skill = 'Please choose a skill';
     }
 
     if (!experience) {
-      setExperienceError('you should fill experience field');
-      return;
+      errors.experinece = 'you should fill experience field';
+    } else if (experience < 1 || experience > 30) {
+      errors.experinece = 'experience should be between 1 and 30';
     }
 
-    // set skill
-    const newSkill = { id: userSkills.length + 1, title: skill.value, experience };
-    setUserSkills([...userSkills, newSkill]);
-    localStorage.setItem('skills', JSON.stringify([...userSkills, newSkill]));
-    setErrorMessage('');
+    if (userSkills) {
+      // if skill is already chosen
+      for (const skillObj of userSkills) {
+        if (skillObj.title === skill.value) {
+          errors.skill = 'this skill is already chosen';
+        }
+      }
+      if (errors.skill || errors.experinece) {
+        setErrorMessage(errors);
+        return;
+      }
+      const newSkill = { id: userSkills.length + 1, title: skill.value, experience };
+      setUserSkills([...userSkills, newSkill]);
+      localStorage.setItem('skills', JSON.stringify([...userSkills, newSkill]));
+    } else {
+      if (errors.skill || errors.experinece) {
+        setErrorMessage(errors);
+        return;
+      }
+      setUserSkills([{ id: 1, title: skill.value, experience }]);
+    }
+
+    setErrorMessage(errors);
   };
 
   // On skill delete
@@ -78,13 +89,15 @@ function Skills() {
     }
     setUserSkills(updatedSkills);
     localStorage.setItem('skills', JSON.stringify(updatedSkills));
-    setErrorMessage('');
+    setErrorMessage({});
   };
 
   // On pagination next button press
-  const onSubmit = function () {
+  const onNext = function () {
     if (userSkills.length < 1) {
-      setErrorMessage('You should choose at least 1 skill');
+      setErrorMessage({ skill: 'you should choose at least 1 skill', experinece: '' });
+    } else {
+      navigate('/survey/3');
     }
   };
 
@@ -99,26 +112,27 @@ function Skills() {
                 name="skills"
                 id="skills"
                 defaultValue="default"
-                style={errorMessage ? { border: '1px solid #FE3B1F' } : {}}
+                style={errorMessage.skill ? { border: '1px solid #FE3B1F' } : {}}
               >
                 <option style={{ color: '#fff' }} value="default" disabled hidden>
                   Skills
                 </option>
 
-                {skills.map((skill) => {
-                  return (
-                    <option key={skill.id} value={skill.title}>
-                      {skill.title}
-                    </option>
-                  );
-                })}
+                {skills &&
+                  skills.map((skill) => {
+                    return (
+                      <option key={skill.id} value={skill.title}>
+                        {skill.title}
+                      </option>
+                    );
+                  })}
               </select>
               <div className="select-arrow">
                 <div className="select-arrow-1"></div>
                 <div className="select-arrow-2"></div>
               </div>
             </div>
-            {errorMessage && <p className="error-message">* {errorMessage}</p>}
+            {errorMessage.skill && <p className="error-message">* {errorMessage.skill}</p>}
 
             <input
               id="experience"
@@ -128,30 +142,32 @@ function Skills() {
               value={experience}
               onChange={(e) => onExperienceChange(e)}
               placeholder="Experience Duration in Years"
-              required
-              min="1"
-              max="50"
             />
-            {experienceError && <p className="error-message">* {experienceError}</p>}
+            {errorMessage.experinece && (
+              <p style={{ marginTop: '-25px', marginBottom: '0' }} className="error-message">
+                * {errorMessage.experinece}
+              </p>
+            )}
 
             <button type="submit" className="add-skill">
               Add Programming Language
             </button>
           </form>
-          {userSkills.map((userSkill) => {
-            return (
-              <Skill
-                key={userSkill.id}
-                id={userSkill.id}
-                title={userSkill.title}
-                experience={userSkill.experience}
-                onSkillDelete={onSkillDelete}
-              />
-            );
-          })}
+          {userSkills &&
+            userSkills.map((userSkill) => {
+              return (
+                <Skill
+                  key={userSkill.id}
+                  id={userSkill.id}
+                  title={userSkill.title}
+                  experience={userSkill.experience}
+                  onSkillDelete={onSkillDelete}
+                />
+              );
+            })}
         </div>
 
-        <Pagination onSubmit={onSubmit} />
+        <Pagination onNext={onNext} />
       </div>
       <div className="about-container">
         <h2>A bit about our battles</h2>
