@@ -1,0 +1,16 @@
+.submit-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.submit-container a {
+  font-size: 24px;
+  color: white;
+  font-family: Montserrat;
+  line-height: 29px;
+}

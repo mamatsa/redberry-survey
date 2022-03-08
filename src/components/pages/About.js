@@ -23,8 +23,8 @@ function About() {
 
   const onNext = function () {
     if (devtalks && devtalkTopic && somethingSpecial) {
-      localStorage.setItem('progress', 3);
-      navigate('/survey/4');
+      localStorage.setItem('progress', 4);
+      navigate('/survey/submit');
     } else {
       setShowErrors(true);
     }
