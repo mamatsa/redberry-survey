@@ -138,11 +138,11 @@ function Skills() {
             <input
               id="experience"
               name="experience"
-              style={{ margin: '30px 0' }}
               type="number"
               value={experience || ''}
               onChange={(e) => onExperienceChange(e)}
               placeholder="Experience Duration in Years"
+              style={errorMessage.experinece ? { border: '1px solid #FE3B1F', margin: '30px 0' } : { margin: '30px 0' }}
             />
             {errorMessage.experinece && (
               <p style={{ marginTop: '-25px', marginBottom: '0' }} className="error-message">

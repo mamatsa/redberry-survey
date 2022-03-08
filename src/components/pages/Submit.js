@@ -57,9 +57,13 @@ function Submit() {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
+        Accept: 'application/json',
       },
       body: JSON.stringify(application),
     });
+
+    localStorage.setItem('progress', 5);
+    navigate('/thanks');
   };
 
   return (
