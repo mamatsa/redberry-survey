@@ -66,7 +66,7 @@ function Introduction() {
     // Mobile number
     if (phoneNumber && phoneNumber.substr(0, 4) !== '+995') {
       errors.phoneNumber = 'number should start width +995';
-    } else if (phoneNumber.length > 13) {
+    } else if (phoneNumber && phoneNumber.length > 13) {
       errors.phoneNumber = 'phone number is too long';
     } else if (phoneNumber && phoneNumber.length < 13) {
       errors.phoneNumber = 'phone number is too short';
@@ -92,7 +92,7 @@ function Introduction() {
             <input
               type="text"
               placeholder="First Name"
-              value={firstName}
+              value={firstName || ''}
               onChange={(e) => onFirstNameChange(e)}
               style={errorMessage.firstName ? { border: '1px solid #FE3B1F' } : {}}
             />
@@ -100,7 +100,7 @@ function Introduction() {
             <input
               type="text"
               placeholder="Last Name"
-              value={lastName}
+              value={lastName || ''}
               onChange={(e) => onLastNameChange(e)}
               style={errorMessage.lastName ? { border: '1px solid #FE3B1F' } : {}}
             />
@@ -108,7 +108,7 @@ function Introduction() {
             <input
               type="email"
               placeholder="E Mail"
-              value={email}
+              value={email || ''}
               onChange={(e) => onEmailChange(e)}
               style={errorMessage.email ? { border: '1px solid #FE3B1F' } : {}}
             />
@@ -116,7 +116,7 @@ function Introduction() {
             <input
               type="tel"
               placeholder="+995 5__ __ __ __"
-              value={phoneNumber}
+              value={phoneNumber || ''}
               onChange={(e) => onPhoneNumberChange(e)}
               style={errorMessage.phoneNumber ? { border: '1px solid #FE3B1F' } : {}}
             />

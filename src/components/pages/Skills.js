@@ -94,7 +94,7 @@ function Skills() {
 
   // On pagination next button press
   const onNext = function () {
-    if (userSkills.length < 1) {
+    if (!userSkills || userSkills.length < 1) {
       setErrorMessage({ skill: 'you should choose at least 1 skill', experinece: '' });
     } else {
       localStorage.setItem('progress', 2);
@@ -140,7 +140,7 @@ function Skills() {
               name="experience"
               style={{ margin: '30px 0' }}
               type="number"
-              value={experience}
+              value={experience || ''}
               onChange={(e) => onExperienceChange(e)}
               placeholder="Experience Duration in Years"
             />

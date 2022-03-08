@@ -81,7 +81,7 @@ function About() {
               id="devtalk-topic"
               name="devtalk-topic"
               placeholder="I would..."
-              value={devtalkTopic}
+              value={devtalkTopic || ''}
               onChange={(e) => {
                 localStorage.setItem('devtalkTopic', e.target.value);
                 setDevtalkTopic(e.target.value);
@@ -101,7 +101,7 @@ function About() {
               id="something-special"
               name="something-special"
               placeholder="I..."
-              value={somethingSpecial}
+              value={somethingSpecial || ''}
               onChange={(e) => {
                 localStorage.setItem('somethingSpecial', e.target.value);
                 setSomethingSpecial(e.target.value);

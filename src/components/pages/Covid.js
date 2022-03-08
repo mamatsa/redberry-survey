@@ -148,7 +148,7 @@ function Covid() {
                   type="date"
                   id="covid-date"
                   name="covid-date"
-                  value={covidDate}
+                  value={covidDate || ''}
                   onChange={(e) => {
                     localStorage.setItem('covidDate', e.target.value);
                     setCovidDate(e.target.value);
@@ -213,7 +213,7 @@ function Covid() {
                   type="date"
                   id="vaccine-date"
                   name="vaccine-date"
-                  value={vaccineDate}
+                  value={vaccineDate || ''}
                   onChange={(e) => {
                     localStorage.setItem('vaccineDate', e.target.value);
                     setVaccineDate(e.target.value);
