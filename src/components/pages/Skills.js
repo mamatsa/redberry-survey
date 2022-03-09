@@ -74,6 +74,7 @@ function Skills() {
         return;
       }
       setUserSkills([{ id: 1, title: skill.value, experience }]);
+      localStorage.setItem('skills', JSON.stringify([{ id: 1, title: skill.value, experience }]));
     }
 
     setErrorMessage(errors);

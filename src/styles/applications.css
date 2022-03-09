@@ -1,0 +1,92 @@
+.applications-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 94px 0;
+}
+
+.applications-container h3 {
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.11em;
+  color: #ffffff;
+  align-self: center;
+  width: 70vw;
+  margin-bottom: 60px;
+}
+
+.application-arrow-up,
+.application-arrow-down {
+  width: 10px;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+.application-numeration {
+  width: 100%;
+  background-color: var(--redberry-red);
+  padding: 15px 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+.application-data {
+  background-color: #ffffff;
+  padding: 36px 80px;
+  margin-top: -25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--redberry-red);
+}
+
+.application-data-top,
+.application-data-bottom {
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+}
+
+.applications-container a {
+  color: var(--redberry-red);
+  font-style: italic;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 40px;
+}
+
+.applications-container p {
+  margin-bottom: 25px;
+}
+
+.application-data-personal p {
+  display: flex;
+}
+
+.application-data-personal,
+.application-data-covid,
+.application-data-insights,
+.application-data-skillset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  width: 50%;
+}
+
+/* .application-data-skillset {
+  margin-right: 360px;
+} */
+
+.application-data span {
+  margin-left: 30px;
+}

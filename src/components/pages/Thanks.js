@@ -13,7 +13,7 @@ function Thanks() {
         navigate('/');
       }, 3000);
     }
-  });
+  }, [navigate]);
 
   return (
     <div className="thanks-container">

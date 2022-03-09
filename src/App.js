@@ -6,6 +6,7 @@ import Covid from './components/pages/Covid';
 import About from './components/pages/About';
 import Submit from './components/pages/Submit';
 import Thanks from './components/pages/Thanks';
+import Applications from './components/pages/Applications';
 import './styles/survey.css';
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/survey/4" element={<About />} />
         <Route path="/survey/submit" element={<Submit />} />
         <Route path="/thanks" element={<Thanks />} />
+        <Route path="/applications" element={<Applications />} />
+        <Route path="*" element={<Welcome />} />
       </Routes>
     </Router>
   );

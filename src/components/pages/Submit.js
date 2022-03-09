@@ -9,7 +9,7 @@ function Submit() {
     if (!localStorage.getItem('progress') || localStorage.getItem('progress') < 4) {
       navigate(-1);
     }
-  }, [navigate]);
+  }, []);
 
   const onSubmitSurvey = async function () {
     const skills = [];
@@ -29,11 +29,12 @@ function Submit() {
     }
 
     const application = {
-      token: '79c02bac-84a8-4d3f-ae9a-9dcdaacfec47',
+      token: '62245d3f-023a-4139-b3f4-13140f74bea3',
       first_name: localStorage.getItem('firstName'),
       last_name: localStorage.getItem('lastName'),
       email: localStorage.getItem('email'),
       work_preference,
+      skills,
       had_covid: localStorage.getItem('covidContact') === 'Yes' ? true : false,
       vaccinated: localStorage.getItem('vaccinated') === 'Yes' ? true : false,
       will_organize_devtalk: localStorage.getItem('devtalks') === 'Yes' ? true : false,
@@ -41,18 +42,20 @@ function Submit() {
       something_special: localStorage.getItem('somethingSpecial'),
     };
 
-    if (localStorage.getItem('phone')) {
+    // add not required input values
+    if (localStorage.getItem('phoneNumber')) {
       application.phone = localStorage.getItem('phoneNumber');
     }
 
-    if (localStorage.getItem('covidDate')) {
+    if (localStorage.getItem('covidContact') && localStorage.getItem('covidContact') === 'Yes') {
       application.had_covid_at = localStorage.getItem('covidDate');
     }
 
-    if (localStorage.getItem('vaccineDate')) {
+    if (localStorage.getItem('vaccinated') && localStorage.getItem('vaccinated') === 'Yes') {
       application.vaccinated_at = localStorage.getItem('vaccineDate');
     }
 
+    // send post request
     await fetch('https://bootcamp-2022.devtest.ge/api/application', {
       method: 'POST',
       headers: {
