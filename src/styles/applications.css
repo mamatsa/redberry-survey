@@ -68,8 +68,8 @@
   margin-bottom: 25px;
 }
 
-.application-data-personal p {
-  display: flex;
+.application-data p {
+  margin-bottom: 35px;
 }
 
 .application-data-personal,
@@ -83,10 +83,27 @@
   width: 50%;
 }
 
-/* .application-data-skillset {
-  margin-right: 360px;
-} */
+.application-data-skillset div {
+  display: flex;
+}
+
+.personal-data {
+  display: flex;
+  align-items: center;
+}
+
+.skill-name {
+  width: 10ch;
+  margin-bottom: -33px;
+}
+
+.personal-value {
+  width: 18ch;
+  display: flex;
+  align-items: center;
+}
 
 .application-data span {
   margin-left: 30px;
+  display: flex;
 }

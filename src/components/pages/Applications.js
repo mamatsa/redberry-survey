@@ -7,7 +7,7 @@ function Applications() {
   const [skills, setSkills] = useState({});
 
   useEffect(() => {
-    const token = '62245d3f-023a-4139-b3f4-13140f74bea3';
+    const token = 'a2feae02-dcf0-415f-9397-926b3583784c';
     const fetchApplications = async () => {
       const res = await fetch(`https://bootcamp-2022.devtest.ge/api/applications?token=${token}`);
       const data = await res.json();

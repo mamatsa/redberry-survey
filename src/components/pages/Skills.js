@@ -11,8 +11,8 @@ function Skills() {
 
   const navigate = useNavigate();
 
-  // Fetch skills
   useEffect(() => {
+    // redirect if previous survey page is not covered yet
     if (!localStorage.getItem('progress')) {
       navigate('/survey/1');
     }

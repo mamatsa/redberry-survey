@@ -8,8 +8,12 @@
   margin-bottom: 17px;
 }
 
-.skill-wrapper:nth-child(2) {
-  justify-self: center;
+.skill-wrapper p:nth-child(1) {
+  width: 7ch;
+}
+
+.skill-wrapper p:nth-child(2) {
+  margin-left: -4ch;
 }
 
 .skill-delete {

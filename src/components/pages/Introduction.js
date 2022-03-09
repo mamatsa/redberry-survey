@@ -75,7 +75,7 @@ function Introduction() {
     setErrorMessage(errors);
 
     if (!errors.firstName && !errors.lastName && !errors.email && !errors.phoneNumber) {
-      localStorage.setItem('progress', 1);
+      localStorage.setItem('progress', 1); // set progress to avoid cheating
       navigate('/survey/2');
     } else {
       localStorage.setItem('progress', '');

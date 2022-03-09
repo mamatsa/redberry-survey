@@ -16,26 +16,27 @@ function Application({ application, numeration, skills }) {
         <div className="application-data-top">
           <div className="application-data-personal">
             <a href="/application">Personal Information</a>
-            <p>
-              First Name <span>{application.first_name}</span>
-            </p>
-            <p>
-              Last Name <span>{application.last_name}</span>
-            </p>
-            <p>
-              E Mail <span>{application.email}</span>
-            </p>
-            <p>
-              Phone <span>{application.phone || ''}</span>
-            </p>
+            <div className="personal-data">
+              <p className="personal-value">First Name</p> <p>{application.first_name}</p>
+            </div>
+            <div className="personal-data">
+              <p className="personal-value">Last Name</p> <p>{application.last_name}</p>
+            </div>
+            <div className="personal-data">
+              <p className="personal-value">E Mail </p> <p>{application.email}</p>
+            </div>
+            <div className="personal-data">
+              <p className="personal-value">Phone</p> <p>{application.phone || ''}</p>
+            </div>
           </div>
           <div className="application-data-skillset">
             <a href="/application">Skillset</a>
             {application.skills.map((skill, index) => {
               return (
-                <p key={index}>
-                  {skills[skill.id]} <span>Years of Experience: {skill.experience}</span>
-                </p>
+                <div key={index}>
+                  <p className="skill-name">{skills[skill.id]}</p>
+                  <span>Years of Experience: {skill.experience}</span>
+                </div>
               );
             })}
           </div>
