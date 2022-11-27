@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Redberry Survey
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a survey created for Redberry(Georgian Tech Company) internship program.
 
-## Available Scripts
+### Prerequisites
 
-In the project directory, you can run:
+- <img src="./readme-assets/node.svg" height="17" style="position: relative; top: 2px"/> _Node JS @12.X and up_
 
-### `npm start`
+* <img src="./readme-assets/npm.png" height="16" style="position: relative; top: 4px"> _npm @6 and up_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tech Stack
 
-### `npm test`
+- <img src="readme-assets/react.png" height="18" style="position: relative; top: 4px" /> [React @17.0.2](https://reactjs.org) - Front-end framework
+- <img src="readme-assets/router.webp" height="11" /> [React Router @6.2.2](https://reactrouter.com/) - Client side router
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#
 
-### `npm run build`
+### Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**To run this application locally you need to follow the steps below:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1\. First of all you need to clone repository from github:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+git clone https://github.com/RedberryInternship/coronatime-otomamatsashvili.git
+```
 
-### `npm run eject`
+2\. Next step requires installing all the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+yarn install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3\. Then copy env example file. You can change environment variables inside .env with your preferences:
 
-## Learn More
+```sh
+cp .env.example .env
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4\. After that you can run application from terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm start
+```
 
-### Code Splitting
+or
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+yarn run start
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Follow this steps for deploying:
 
-### `npm run build` fails to minify
+1\. You need to copy env example file on server. You should update env variables with your needs:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+cp .env.example .env
+```
+
+2\. And then just build:
+
+```sh
+npm run build
+```
+
+#
+
+### Project Structure
+
+```bash
+├─── public          # entry folder
+    ├─── index.html     # main html file
+├─── src             # project source codes
+    ├─── images         # project images
+    ├─── styles         # css style files
+    ├─── components     # reusable components for whole app
+        ├─── svgs           # svg components
+        ├─── Component.jsx  # component file
+        ├─── index.js       # exports components
+    ├─── pages          # application pages
+        ├─── Page.jsx       # page component file
+        ├─── index.js       # exports all pages
+    ├─── App.jsx        # main component with routing
+    ├─── index.css      # main css file
+    ├─── index.js       # root JS file
+├─── readme-assets   # readme assets folder
+├─── .env            # environment variables
+├─── .jsconfig.json  # allows absolute imports
+├─── .gitignore      # git ignored file list
+├─── package.json    # dependency manager configurations
+├─── README.md       # github readme file
+```
