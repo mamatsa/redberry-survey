@@ -1,13 +1,15 @@
-import Pagination from '../Pagination';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Skill from '../Skill';
+import { Skill, Pagination } from 'components';
 
 function Skills() {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState('');
   const [userSkills, setUserSkills] = useState([]);
-  const [errorMessage, setErrorMessage] = useState({ skill: '', experinece: '' });
+  const [errorMessage, setErrorMessage] = useState({
+    skill: '',
+    experinece: '',
+  });
 
   const navigate = useNavigate();
 
@@ -65,7 +67,11 @@ function Skills() {
         setErrorMessage(errors);
         return;
       }
-      const newSkill = { id: userSkills.length + 1, title: skill.value, experience };
+      const newSkill = {
+        id: userSkills.length + 1,
+        title: skill.value,
+        experience,
+      };
       setUserSkills([...userSkills, newSkill]);
       localStorage.setItem('skills', JSON.stringify([...userSkills, newSkill]));
     } else {
@@ -74,7 +80,10 @@ function Skills() {
         return;
       }
       setUserSkills([{ id: 1, title: skill.value, experience }]);
-      localStorage.setItem('skills', JSON.stringify([{ id: 1, title: skill.value, experience }]));
+      localStorage.setItem(
+        'skills',
+        JSON.stringify([{ id: 1, title: skill.value, experience }])
+      );
     }
 
     setErrorMessage(errors);
@@ -96,7 +105,10 @@ function Skills() {
   // On pagination next button press
   const onNext = function () {
     if (!userSkills || userSkills.length < 1) {
-      setErrorMessage({ skill: 'you should choose at least 1 skill', experinece: '' });
+      setErrorMessage({
+        skill: 'you should choose at least 1 skill',
+        experinece: '',
+      });
     } else {
       localStorage.setItem('progress', 2);
       navigate('/survey/3');
@@ -114,9 +126,16 @@ function Skills() {
                 name="skills"
                 id="skills"
                 defaultValue="default"
-                style={errorMessage.skill ? { border: '1px solid #FE3B1F' } : {}}
+                style={
+                  errorMessage.skill ? { border: '1px solid #FE3B1F' } : {}
+                }
               >
-                <option style={{ color: '#fff' }} value="default" disabled hidden>
+                <option
+                  style={{ color: '#fff' }}
+                  value="default"
+                  disabled
+                  hidden
+                >
                   Skills
                 </option>
 
@@ -134,7 +153,9 @@ function Skills() {
                 <div className="select-arrow-2"></div>
               </div>
             </div>
-            {errorMessage.skill && <p className="error-message">* {errorMessage.skill}</p>}
+            {errorMessage.skill && (
+              <p className="error-message">* {errorMessage.skill}</p>
+            )}
 
             <input
               id="experience"
@@ -143,10 +164,17 @@ function Skills() {
               value={experience || ''}
               onChange={(e) => onExperienceChange(e)}
               placeholder="Experience Duration in Years"
-              style={errorMessage.experinece ? { border: '1px solid #FE3B1F', margin: '30px 0' } : { margin: '30px 0' }}
+              style={
+                errorMessage.experinece
+                  ? { border: '1px solid #FE3B1F', margin: '30px 0' }
+                  : { margin: '30px 0' }
+              }
             />
             {errorMessage.experinece && (
-              <p style={{ marginTop: '-25px', marginBottom: '0' }} className="error-message">
+              <p
+                style={{ marginTop: '-25px', marginBottom: '0' }}
+                className="error-message"
+              >
                 * {errorMessage.experinece}
               </p>
             )}
@@ -174,10 +202,12 @@ function Skills() {
       <div className="about-container">
         <h2>A bit about our battles</h2>
         <p>
-          As we said, Redberry has been on the field for quite some time now, and we have touched and embraced a variety
-          of programming languages, technologies, philosophies, and frameworks. We are battle-tested in PHP Laravel
-          Stack with Vue.js, refined in React, and allies with Serverside technologies like Docker and Kubernetes, and
-          now we have set foot in the web3 industry.
+          As we said, Redberry has been on the field for quite some time now,
+          and we have touched and embraced a variety of programming languages,
+          technologies, philosophies, and frameworks. We are battle-tested in
+          PHP Laravel Stack with Vue.js, refined in React, and allies with
+          Serverside technologies like Docker and Kubernetes, and now we have
+          set foot in the web3 industry.
         </p>
       </div>
     </div>

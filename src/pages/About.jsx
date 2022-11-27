@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Pagination from '../Pagination';
-import '../../styles/about.css';
+import { Pagination } from 'components';
+import 'styles/about.css';
 
 function About() {
   const [devtalks, setDevtalks] = useState('');
@@ -12,7 +12,10 @@ function About() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem('progress') || localStorage.getItem('progress') < 3) {
+    if (
+      !localStorage.getItem('progress') ||
+      localStorage.getItem('progress') < 3
+    ) {
       navigate(-1);
     }
 
@@ -35,7 +38,9 @@ function About() {
         <div className="survey-container-main">
           <h2>What about you?</h2>
           <form action="" className="covid-form">
-            <label>Would you attend Devtalks and maybe also organize your own?</label>
+            <label>
+              Would you attend Devtalks and maybe also organize your own?
+            </label>
             <div className="form-radios">
               <div className="radio-wrapper">
                 <input
@@ -71,12 +76,21 @@ function About() {
             </div>
 
             {showErrors && !devtalks && (
-              <p className="error-message" style={{ marginTop: '-38px', marginLeft: '10px', marginBottom: '25px' }}>
+              <p
+                className="error-message"
+                style={{
+                  marginTop: '-38px',
+                  marginLeft: '10px',
+                  marginBottom: '25px',
+                }}
+              >
                 * you should answer this question{' '}
               </p>
             )}
 
-            <label htmlFor="devtalk-topic">What would you speak about at Devtalk?</label>
+            <label htmlFor="devtalk-topic">
+              What would you speak about at Devtalk?
+            </label>
             <textarea
               id="devtalk-topic"
               name="devtalk-topic"
@@ -91,7 +105,14 @@ function About() {
             />
 
             {showErrors && !devtalkTopic && (
-              <p className="error-message" style={{ marginTop: '-38px', marginLeft: '10px', marginBottom: '25px' }}>
+              <p
+                className="error-message"
+                style={{
+                  marginTop: '-38px',
+                  marginLeft: '10px',
+                  marginBottom: '25px',
+                }}
+              >
                 * you should answer this question{' '}
               </p>
             )}
@@ -111,7 +132,14 @@ function About() {
             />
 
             {showErrors && !somethingSpecial && (
-              <p className="error-message" style={{ marginTop: '-38px', marginLeft: '10px', marginBottom: '25px' }}>
+              <p
+                className="error-message"
+                style={{
+                  marginTop: '-38px',
+                  marginLeft: '10px',
+                  marginBottom: '25px',
+                }}
+              >
                 * you should answer this question{' '}
               </p>
             )}
@@ -122,12 +150,15 @@ function About() {
       <div className="about-container">
         <h2>Redberrian Insights</h2>
         <p style={{ width: '51ch' }}>
-          We were soo much fun before the pandemic started! Parties almost every weekend and lavish employee birthday
-          celebrations! Unfortunately, covid ruined that fun like it did almost everything else in the world. But we try
-          our best to zhuzh it up a bit. For example, we host biweekly Devtalks where our senior and lead developers
-          talk about topics they are passionate about. Previous topics have included Web3, NFT, Laravel 9, Kubernetes,
-          etc. We hold these talks in the office but you can join our Zoom broadcast as well. Feel free to join either
-          as an attendee or a speaker!
+          We were soo much fun before the pandemic started! Parties almost every
+          weekend and lavish employee birthday celebrations! Unfortunately,
+          covid ruined that fun like it did almost everything else in the world.
+          But we try our best to zhuzh it up a bit. For example, we host
+          biweekly Devtalks where our senior and lead developers talk about
+          topics they are passionate about. Previous topics have included Web3,
+          NFT, Laravel 9, Kubernetes, etc. We hold these talks in the office but
+          you can join our Zoom broadcast as well. Feel free to join either as
+          an attendee or a speaker!
         </p>
       </div>
     </div>

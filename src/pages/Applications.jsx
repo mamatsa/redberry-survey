@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import '../../styles/applications.css';
-import Application from '../Application';
+import { Application } from 'components';
+import 'styles/applications.css';
 
 function Applications() {
   const [applications, setApplications] = useState([]);
@@ -9,7 +9,9 @@ function Applications() {
   useEffect(() => {
     const token = 'a2feae02-dcf0-415f-9397-926b3583784c';
     const fetchApplications = async () => {
-      const res = await fetch(`https://bootcamp-2022.devtest.ge/api/applications?token=${token}`);
+      const res = await fetch(
+        `https://bootcamp-2022.devtest.ge/api/applications?token=${token}`
+      );
       const data = await res.json();
       setApplications(data);
     };
@@ -32,7 +34,14 @@ function Applications() {
     <div className="applications-container">
       <h3>Submited Applications</h3>
       {applications.map((app, index) => {
-        return <Application key={index} application={app} numeration={index} skills={skills} />;
+        return (
+          <Application
+            key={index}
+            application={app}
+            numeration={index}
+            skills={skills}
+          />
+        );
       })}
     </div>
   );

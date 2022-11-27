@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../../styles/welcome.css';
+import 'styles/welcome.css';
 
 function Welcome() {
   localStorage.setItem('progress', '');

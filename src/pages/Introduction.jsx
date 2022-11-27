@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Pagination from '../Pagination';
+import { Pagination } from 'components';
 
 function Introduction() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [errorMessage, setErrorMessage] = useState({ firstName: '', lastName: '', email: '', phoneNumber: '' });
+  const [errorMessage, setErrorMessage] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+  });
 
   const navigate = useNavigate();
 
@@ -74,7 +79,12 @@ function Introduction() {
 
     setErrorMessage(errors);
 
-    if (!errors.firstName && !errors.lastName && !errors.email && !errors.phoneNumber) {
+    if (
+      !errors.firstName &&
+      !errors.lastName &&
+      !errors.email &&
+      !errors.phoneNumber
+    ) {
       localStorage.setItem('progress', 1); // set progress to avoid cheating
       navigate('/survey/2');
     } else {
@@ -94,17 +104,25 @@ function Introduction() {
               placeholder="First Name"
               value={firstName || ''}
               onChange={(e) => onFirstNameChange(e)}
-              style={errorMessage.firstName ? { border: '1px solid #FE3B1F' } : {}}
+              style={
+                errorMessage.firstName ? { border: '1px solid #FE3B1F' } : {}
+              }
             />
-            {errorMessage.firstName && <p className="error-message">* {errorMessage.firstName}</p>}
+            {errorMessage.firstName && (
+              <p className="error-message">* {errorMessage.firstName}</p>
+            )}
             <input
               type="text"
               placeholder="Last Name"
               value={lastName || ''}
               onChange={(e) => onLastNameChange(e)}
-              style={errorMessage.lastName ? { border: '1px solid #FE3B1F' } : {}}
+              style={
+                errorMessage.lastName ? { border: '1px solid #FE3B1F' } : {}
+              }
             />
-            {errorMessage.lastName && <p className="error-message">* {errorMessage.lastName}</p>}
+            {errorMessage.lastName && (
+              <p className="error-message">* {errorMessage.lastName}</p>
+            )}
             <input
               type="email"
               placeholder="E Mail"
@@ -112,15 +130,21 @@ function Introduction() {
               onChange={(e) => onEmailChange(e)}
               style={errorMessage.email ? { border: '1px solid #FE3B1F' } : {}}
             />
-            {errorMessage.email && <p className="error-message">* {errorMessage.email}</p>}
+            {errorMessage.email && (
+              <p className="error-message">* {errorMessage.email}</p>
+            )}
             <input
               type="tel"
               placeholder="+995 5__ __ __ __"
               value={phoneNumber || ''}
               onChange={(e) => onPhoneNumberChange(e)}
-              style={errorMessage.phoneNumber ? { border: '1px solid #FE3B1F' } : {}}
+              style={
+                errorMessage.phoneNumber ? { border: '1px solid #FE3B1F' } : {}
+              }
             />
-            {errorMessage.phoneNumber && <p className="error-message">* {errorMessage.phoneNumber}</p>}
+            {errorMessage.phoneNumber && (
+              <p className="error-message">* {errorMessage.phoneNumber}</p>
+            )}
           </form>
         </div>
         <Pagination onNext={onNext} />
@@ -128,9 +152,11 @@ function Introduction() {
       <div className="about-container">
         <h2>Redberry Origins</h2>
         <p>
-          You watch “What? Where? When?” Yeah. Our founders used to play it. That’s where they got a question about a
-          famous American author and screenwriter Ray Bradbury. Albeit, our CEO Gaga Darsalia forgot the exact name and
-          he answered Ray Redberry. And at that moment, a name for a yet to be born company was inspired - Redberry 😇
+          You watch “What? Where? When?” Yeah. Our founders used to play it.
+          That’s where they got a question about a famous American author and
+          screenwriter Ray Bradbury. Albeit, our CEO Gaga Darsalia forgot the
+          exact name and he answered Ray Redberry. And at that moment, a name
+          for a yet to be born company was inspired - Redberry 😇
         </p>
       </div>
     </div>

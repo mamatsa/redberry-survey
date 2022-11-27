@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Pagination from '../Pagination';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/covid.css';
+import { Pagination } from 'components';
+import 'styles/covid.css';
 
 function Covid() {
   const [workPlace, setWorkPlace] = useState('');
@@ -14,7 +14,10 @@ function Covid() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem('progress') || localStorage.getItem('progress') < 2) {
+    if (
+      !localStorage.getItem('progress') ||
+      localStorage.getItem('progress') < 2
+    ) {
       navigate(-1);
     }
     setWorkPlace(localStorage.getItem('workPlace'));
@@ -94,7 +97,14 @@ function Covid() {
               </div>
 
               {showErrors && !workPlace && (
-                <p className="error-message" style={{ marginTop: '-4px', marginLeft: '10px', marginBottom: '4px' }}>
+                <p
+                  className="error-message"
+                  style={{
+                    marginTop: '-4px',
+                    marginLeft: '10px',
+                    marginBottom: '4px',
+                  }}
+                >
                   * you should answer this question{' '}
                 </p>
               )}
@@ -136,7 +146,14 @@ function Covid() {
             </div>
 
             {showErrors && !covidContact && (
-              <p className="error-message" style={{ marginTop: '-40px', marginLeft: '10px', marginBottom: '40px' }}>
+              <p
+                className="error-message"
+                style={{
+                  marginTop: '-40px',
+                  marginLeft: '10px',
+                  marginBottom: '40px',
+                }}
+              >
                 * you should answer this question{' '}
               </p>
             )}
@@ -157,7 +174,14 @@ function Covid() {
                   max="2022-12-31"
                 />
                 {showErrors && !covidDate && (
-                  <p className="error-message" style={{ marginTop: '-38px', marginBottom: '22px', marginLeft: '10px' }}>
+                  <p
+                    className="error-message"
+                    style={{
+                      marginTop: '-38px',
+                      marginBottom: '22px',
+                      marginLeft: '10px',
+                    }}
+                  >
                     * you should answer this question{' '}
                   </p>
                 )}
@@ -201,14 +225,19 @@ function Covid() {
             </div>
 
             {showErrors && !vaccinated && (
-              <p className="error-message" style={{ marginTop: '-40px', marginLeft: '10px' }}>
+              <p
+                className="error-message"
+                style={{ marginTop: '-40px', marginLeft: '10px' }}
+              >
                 * you should answer this question{' '}
               </p>
             )}
 
             {vaccinated === 'Yes' && (
               <>
-                <label htmlFor="covid-date">When did you get your last covid vaccine?</label>
+                <label htmlFor="covid-date">
+                  When did you get your last covid vaccine?
+                </label>
                 <input
                   type="date"
                   id="vaccine-date"
@@ -223,7 +252,14 @@ function Covid() {
                 />
 
                 {showErrors && !vaccineDate && (
-                  <p className="error-message" style={{ marginTop: '-38px', marginBottom: '22px', marginLeft: '10px' }}>
+                  <p
+                    className="error-message"
+                    style={{
+                      marginTop: '-38px',
+                      marginBottom: '22px',
+                      marginLeft: '10px',
+                    }}
+                  >
                     * you should answer this question{' '}
                   </p>
                 )}
@@ -236,10 +272,13 @@ function Covid() {
       <div className="about-container">
         <h2>Redberry Covid Policies</h2>
         <p style={{ width: '51ch' }}>
-          As this infamous pandemic took over the world, we adjusted our working practices so that our employees can be
-          as safe and comfortable as possible. We have a hybrid work environment, so you can either work from home or
-          visit our lovely office on Sairme Street. If it was up to us, we would love you to see us in the office
-          because we think face-to-face communications &gt; Zoom meetings. Both on the fun and productivity scales.
+          As this infamous pandemic took over the world, we adjusted our working
+          practices so that our employees can be as safe and comfortable as
+          possible. We have a hybrid work environment, so you can either work
+          from home or visit our lovely office on Sairme Street. If it was up to
+          us, we would love you to see us in the office because we think
+          face-to-face communications &gt; Zoom meetings. Both on the fun and
+          productivity scales.
         </p>
       </div>
     </div>

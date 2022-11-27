@@ -1,13 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Welcome from './components/pages/Welcome';
-import Introduction from './components/pages/Introduction';
-import Skills from './components/pages/Skills';
-import Covid from './components/pages/Covid';
-import About from './components/pages/About';
-import Submit from './components/pages/Submit';
-import Thanks from './components/pages/Thanks';
-import Applications from './components/pages/Applications';
-import './styles/survey.css';
+import {
+  Welcome,
+  Introduction,
+  Skills,
+  Covid,
+  About,
+  Submit,
+  Thanks,
+  Applications,
+} from 'pages';
+import 'styles/survey.css';
 
 function App() {
   return (

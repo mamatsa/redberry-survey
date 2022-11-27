@@ -1,7 +1,6 @@
-import '../styles/applications.css';
-import arrowUp from '../images/arrow-up.svg';
-import arrowDown from '../images/arrow-down.svg';
 import { useState } from 'react';
+import { ArrowDown, ArrowUp } from 'components';
+import 'styles/applications.css';
 
 function Application({ application, numeration, skills }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,24 +8,34 @@ function Application({ application, numeration, skills }) {
   return (
     <div className="application-container">
       <p className="application-numeration" onClick={() => setIsOpen(!isOpen)}>
-        {numeration + 1} <img src={isOpen ? arrowUp : arrowDown} style={{ cursor: 'pointer' }} alt="arrow" />
+        {numeration + 1}
+        <div style={{ cursor: 'pointer' }}>
+          {isOpen ? <ArrowUp /> : <ArrowDown />}
+        </div>
       </p>
 
-      <div className="application-data" style={!isOpen ? { display: 'none' } : {}}>
+      <div
+        className="application-data"
+        style={!isOpen ? { display: 'none' } : {}}
+      >
         <div className="application-data-top">
           <div className="application-data-personal">
             <a href="/application">Personal Information</a>
             <div className="personal-data">
-              <p className="personal-value">First Name</p> <p>{application.first_name}</p>
+              <p className="personal-value">First Name</p>{' '}
+              <p>{application.first_name}</p>
             </div>
             <div className="personal-data">
-              <p className="personal-value">Last Name</p> <p>{application.last_name}</p>
+              <p className="personal-value">Last Name</p>{' '}
+              <p>{application.last_name}</p>
             </div>
             <div className="personal-data">
-              <p className="personal-value">E Mail </p> <p>{application.email}</p>
+              <p className="personal-value">E Mail </p>{' '}
+              <p>{application.email}</p>
             </div>
             <div className="personal-data">
-              <p className="personal-value">Phone</p> <p>{application.phone || ''}</p>
+              <p className="personal-value">Phone</p>{' '}
+              <p>{application.phone || ''}</p>
             </div>
           </div>
           <div className="application-data-skillset">
@@ -163,7 +172,9 @@ function Application({ application, numeration, skills }) {
 
               {application.vaccinated && (
                 <>
-                  <label htmlFor="covid-date">When did you get your last covid vaccine?</label>
+                  <label htmlFor="covid-date">
+                    When did you get your last covid vaccine?
+                  </label>
                   <input
                     type="date"
                     id="vaccine-date"
@@ -180,7 +191,9 @@ function Application({ application, numeration, skills }) {
           <div className="application-data-insights">
             <a href="/application">Insights</a>
             <form action="" className="covid-form">
-              <label>Would you attend Devtalks and maybe also organize your own?</label>
+              <label>
+                Would you attend Devtalks and maybe also organize your own?
+              </label>
               <div className="form-radios">
                 <div className="radio-wrapper">
                   <input
@@ -209,7 +222,9 @@ function Application({ application, numeration, skills }) {
                 </div>
               </div>
 
-              <label htmlFor="devtalk-topic">What would you speak about at Devtalk?</label>
+              <label htmlFor="devtalk-topic">
+                What would you speak about at Devtalk?
+              </label>
               <textarea
                 id="devtalk-topic"
                 name="devtalk-topic"
@@ -220,7 +235,9 @@ function Application({ application, numeration, skills }) {
                 readOnly
               />
 
-              <label htmlFor="something-special">Tell us something special</label>
+              <label htmlFor="something-special">
+                Tell us something special
+              </label>
               <textarea
                 id="something-special"
                 name="something-special"
